@@ -18,10 +18,10 @@
 
 ```astro
 ---
+import { BLOG_PAGINATION_SIZE } from "@/consts";
+import BlogPostList from "@/layouts/BlogPostList.astro";
 import { filterPosts } from "@/utils/misc";
 import { getCollection } from 'astro:content';
-import BlogPostList from "@/layouts/BlogPostList.astro";
-import { BLOG_PAGINATION_SIZE } from "@/consts";
 
 const posts = filterPosts(await getCollection('blog'), {
     filterDraft: true,
